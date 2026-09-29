@@ -1,18 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// CODIGO INICIAL DE LA PRACTICA 3.
-// No esta refactorizado: el objetivo es que el equipo detecte y mejore su diseno.
-abstract class Archivo {
-    String nombre;
-    int tamanio;
-
-    Archivo(String nombre, int tamanio) {
-        this.nombre = nombre;
-        this.tamanio = tamanio;
-    }
-}
-
 class ArchivoPDF extends Archivo {
     ArchivoPDF(String nombre, int tamanio) {
         super(nombre, tamanio);
