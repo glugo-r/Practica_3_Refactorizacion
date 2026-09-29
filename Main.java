@@ -1,18 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class ArchivoPDF extends Archivo {
-    ArchivoPDF(String nombre, int tamanio) {
-        super(nombre, tamanio);
-    }
-}
-
-class ArchivoTexto extends Archivo {
-    ArchivoTexto(String nombre, int tamanio) {
-        super(nombre, tamanio);
-    }
-}
-
 class Carpeta {
     String nombre;
     List<Archivo> archivos = new ArrayList<>();
