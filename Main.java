@@ -1,16 +1,9 @@
-class CorreoLegacy {
-    void send_email(String to, String body) {
-        System.out.println("Para: " + to);
-        System.out.println(body);
-    }
-}
-
 public class Main {
 
-    static void enviarResultado(Carpeta carpeta, String destino) {
-        CorreoLegacy correo = new CorreoLegacy();
-        correo.send_email(destino,
-                "Tamanio total: " + carpeta.obtenerTamanio());
+    static void enviarResultado(Carpeta carpeta, String destino, Notificador notificador) {
+        String mensaje = "Tamanio total: " + carpeta.obtenerTamanio();
+
+        notificador.enviar(destino, mensaje);
     }
     // Ejemplo de ejecución de funciones del programa 
     public static void main(String[] args) {
@@ -31,8 +24,11 @@ public class Main {
         clase.agregar(ejemplos);
 
         System.out.println(clase.obtenerTamanio());
-        enviarResultado(clase, "profesor@universidad.edu");
 
+        CorreoLegacy correo = new CorreoLegacy();
+        Notificador notificador = new AdaptadorCorreo(correo);
+
+        enviarResultado(clase, "profesor@universidad.edu", notificador);
 
         // Prueba carpeta vacía
         Carpeta vacia = new Carpeta("Vacia"); // preparar
