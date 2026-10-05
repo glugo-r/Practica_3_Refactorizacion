@@ -12,5 +12,5 @@ Practica sobre Refactorización.
 2. instrucciones para ejecutar el programa:
 
    * Abrir una terminal en la carpeta donde se encuentran los archivos .java.
-   * Compilar usando `javac *.java`
+   * Compilar usando `javac -d class *.java`
    * Ejecutar el Main con el comando `java Main`
