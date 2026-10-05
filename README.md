@@ -13,4 +13,4 @@ Practica sobre Refactorización.
 
    * Abrir una terminal en la carpeta donde se encuentran los archivos .java.
    * Compilar usando `javac -d class *.java`
-   * Ejecutar el Main con el comando `java Main`
+   * Ejecutar el Main con el comando `java -cp class Main`
