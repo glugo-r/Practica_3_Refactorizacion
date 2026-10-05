@@ -38,3 +38,30 @@ Si se quisiera cambiar CorreoLegacy por otro se tendría que modificar Main, si 
 
 * ¿Qué clase o interfaz podría hacerse responsable?
 Se puede crear una interfaz Notificador con un método enviar(destino, mensaje). AdaptadorCorrreo implementa la interfaz y traduce la llamada send_email() de CorreoLegacy. Así Main usa Notificador y no depende de CorreoLegacy.
+
+* Diagrama Final
+https://canva.link/w9eikhvyj14mkc7
+
+* Etapa 6
+
+* ¿Qué responsabilidad se movió a cada clase?
+
+- Elemento: Define la operación obtenerTamanio() que deben tener los elementos que pueden estar en una carpeta.
+- Archivo: Representa un archivo y devuelve su propio tamaño con obtenerTamanio().
+- Carpeta: Almacena elementos y calcula su tamaño total. Puede contener ahora archivos y otras caarpetas, obteniendo el tamaño de cada elemento con obtenerTamanio().
+- CreadorArchivo: Define la operación para creaer un archivo
+- CreadorPDF: Crea objetos ArchivoPDF.
+- CreadorTexto: Crea objetos ArchivoTexto.
+- Notificador: Define la forma en que el programa solicita el envió de un mensaje con enviar(destino, mensaje
+- AdaptadorCorreo: Adapta la interfaz Notificador al método que usa CorreoLegacy, convierte la llamada a enviar() en una llamada a send_email()
+- CorreoLegacy: Mantiene el envió del correo usando el método original send_email(), no tuvo que ser modificada.
+- Main: Define que objetos crear y como organizarlos, y como usar sus operaciones.
+
+* ¿Que permaneció igual para quien usa el programa?
+Para quien usa el programa su compotamiento principal se permanece igual.
+- Se pueden crear archivos PDF y de texto
+- Agregar archivos a una carpeta
+- Crear subcarpetas y agregarlas a otras carpetas
+- Calcular el tamaño total de una carpeta, con sus subcarpetas
+- Enviar el correo con el tamanio
+
